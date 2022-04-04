@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: person-microservice
+
+dynamodb:
+  endpoint: http://localhost:4566
+  region: sa-east-1
+
+sqs:
+  region: sa-east-1
+  endpoint: http://localhost:4566
+
+integrations:
+  cep: "https://viacep.com.br/ws/"
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
